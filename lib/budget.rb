@@ -18,12 +18,11 @@ class Budget
   end
 
   def employee_salaries
-    salaries = []
-    @departments.each do |dept|
-      dept.employees.each do |employee|
-        salaries << employee.salary
+    salaries = @departments.map do |dept|
+      dept.employees.map do |employee|
+        employee.salary
       end 
-    end
+    end.flatten
     salaries
   end
 end
