@@ -16,4 +16,14 @@ class Budget
       dept.expenses < amt
     end
   end
+
+  def employee_salaries
+    salaries = []
+    @departments.each do |dept|
+      dept.employees.each do |employee|
+        salaries << employee.salary
+      end 
+    end
+    salaries
+  end
 end
