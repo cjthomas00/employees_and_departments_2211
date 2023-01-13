@@ -22,5 +22,18 @@ RSpec.describe Budget do
       budget.add_department(finance)
       expect(budget.departments).to eq([customer_service, finance])
     end
+
+    it 'can list depts with #expenses_under(amt)' do
+      budget.add_department(customer_service)
+      budget.add_department(finance)
+
+      customer_service.expense(1000)
+      finance.expense(250)
+
+      expect(budget.expenses_under(500)).to eq([finance])
+      
+      finance.expense(250)
+      expect(budget.expenses_under(500)).to eq([])
+    end
   end 
 end
