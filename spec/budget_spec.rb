@@ -10,5 +10,9 @@ RSpec.describe Budget do
       expect(budget).to be_instance_of(Budget)
       expect(budget.year).to eq("2023")
     end
+
+    it 'starts w/o #departments' do
+    expect(budget.departments).to eq([])
+    end
   end 
 end
