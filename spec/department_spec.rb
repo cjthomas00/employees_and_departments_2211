@@ -9,5 +9,9 @@ RSpec.describe Department do
       expect(customer_service).to be_instance_of(Department)
       expect(customer_service.name).to eq("Customer Service")
     end
+
+    it 'starts without #employees' do
+      expect(customer_service.employees).to eq([])
+    end
   end
 end
