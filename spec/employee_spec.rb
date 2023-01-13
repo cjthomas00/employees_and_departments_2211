@@ -10,5 +10,10 @@ RSpec.describe Employee do
       expect(bobbi.age).to eq(30)
       expect(bobbi.salary).to eq(100000)
     end
+
+    it 'can #give_raise' do
+      bobbi.give_raise(5000)
+      expect(bobbi.salary).to eq(105000)
+    end
   end
 end
