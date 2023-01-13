@@ -21,5 +21,9 @@ RSpec.describe Department do
       customer_service.hire(aaron)
       expect(customer_service.employees).to eq([bobbi, aaron])
     end
+
+    it 'starts without any #expenses' do
+      expect(customer_service.expenses).to eq(0)
+    end
   end
 end
