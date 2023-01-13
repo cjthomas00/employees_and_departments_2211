@@ -6,4 +6,8 @@ class Budget
     @year = year
     @departments = []
   end
+
+  def add_department(dept)
+    @departments << dept
+  end
 end
